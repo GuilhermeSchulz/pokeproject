@@ -3,7 +3,7 @@ import { fetchSpecificPokemonData } from '@/service/service';
 import { getStatLabel, getTypeColors } from '@/app/utils/utils';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/redux';
 import { setLoading } from '@/reducers/pokemonReducer';
@@ -47,7 +47,7 @@ const PokemonPage: React.FC = () => {
         }
     };
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         fetchSpecificPokemon();
     }, [name]);
 
@@ -64,7 +64,7 @@ const PokemonPage: React.FC = () => {
 
     return (
         <div className='w-[100%] h-[90%] flex items-center flex-col gap-1 p-5 max-sm:h-[80%] overflow-auto min-h-[768px]'>
-            <Link className='p-2 bg-carmine rounded text-white w-[80px] text-center self-end' href='/'>Voltar</Link>
+            <Link onClick={() => dispatch(setSearchedPokemon(null))} className='p-2 bg-carmine rounded text-white w-[80px] text-center self-end' href='/'>Voltar</Link>
             {loading ? (
                 <>
                     <CustomSkeleton />

@@ -1,7 +1,7 @@
 "use client"
 import { PokemonList } from "@/components/pokemonCard/pokemonCard";
 import { fetchPokemonData } from "@/service/service";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { Skeleton } from "@mui/material"
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/redux";
@@ -23,7 +23,7 @@ export default function Home() {
     dispatch(setLoading(false));
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     fetchPokemons("1");
   }, []);
 
