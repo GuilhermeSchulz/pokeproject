@@ -36,7 +36,7 @@ export default function Home() {
         else
           fetchPokemons(e.target.value);
       }}>
-        <option value={0}>Selecione a Geração</option>
+        <option value={0} disabled selected>Selecione a Geração</option>
         <option value={1}>Geração 1</option>
         <option value={2}>Geração 2</option>
         <option value={3}>Geração 3</option>
