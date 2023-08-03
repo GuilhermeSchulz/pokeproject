@@ -17,7 +17,7 @@ export const Header = () => {
     const dispatch = useAppDispatch();
     const router = useRouter()
     const requestPoke = async () => {
-        const data = await fetchSpecificPokemonData(search);
+        const data = await fetchSpecificPokemonData(search.toLowerCase());
         dispatch(setSearchedPokemon(data));
         if (data) {
             toast.success
