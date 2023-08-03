@@ -58,7 +58,8 @@ const PokemonPage: React.FC = () => {
     }
 
     const fixName = pokemon && pokemon?.name.charAt(0).toUpperCase() + pokemon?.name.slice(1)
-
+    const pokemonWeight = pokemon && (pokemon.weight * 0.1).toFixed(1)
+    const pokemonHeight = pokemon && (pokemon.height * 0.1).toFixed(1)
 
 
     return (
@@ -76,8 +77,8 @@ const PokemonPage: React.FC = () => {
                         <span className='p-2 bg-carmine rounded text-white w-[80px] text-center cursor-pointer' onClick={shinyToggle}>{shiny ? "Normal" : "Shiny"}</span>
                         <img className="w-[200px]" src={shiny ? pokemon?.sprites.front_shiny : pokemon?.sprites.front_default} alt={pokemon?.name} />
                         <h1 className='text-center text-lg font-bold text-white'>{fixName}</h1>
-                        <p className='text-center text-m font-bold text-white'>Peso: {(pokemon.weight * 0.1).toFixed(1)} kg</p>
-                        <p className='text-center text-m font-bold text-white'>Altura: {(pokemon.height * 0.1).toFixed(1)} m</p>
+                        <p className='text-center text-m font-bold text-white'>Peso: {pokemonWeight} kg</p>
+                        <p className='text-center text-m font-bold text-white'>Altura: {pokemonHeight} m</p>
                         <div className='flex gap-1'>
                             {pokemon?.types.map((type) => (<span className={`w-[70px] text-white p-1 rounded-full text-center text-sm ${getTypeColors(
                                 type.type.name
