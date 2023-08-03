@@ -1,3 +1,4 @@
+"use client"
 import React from 'next';
 import Image from 'next/image'
 import logo from '@/public/images/pokelogo.png'

@@ -1,11 +1,9 @@
-import { Header } from '@/components/header/header'
+
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Provider } from 'react-redux'
-import store from '@/store/redux'
-import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import RootComponent from '@/components/rootComponent/rootComponent'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={inter.className}>
-        <Provider store={store}>
-          <Header />
+        <RootComponent>
+
           {children}
-        </Provider>
-        <ToastContainer />
+        </RootComponent>
+
       </body>
 
     </html >
