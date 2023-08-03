@@ -7,6 +7,7 @@ import { fetchSpecificPokemonData } from '@/service/service';
 import { useRouter } from 'next/navigation'
 import { useAppDispatch } from '@/store/redux';
 import { setSearchedPokemon } from '@/reducers/pokemonSearchReducer';
+import { toast } from 'react-toastify';
 
 
 export const Header = () => {
@@ -17,11 +18,31 @@ export const Header = () => {
         const data = await fetchSpecificPokemonData(search);
         dispatch(setSearchedPokemon(data));
         if (data) {
+            toast.success
+                ('Pokemon encontrado, redirecionando!', {
+                    position: 'bottom-right',
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
             router.push(`/pokemon/${data.name}`);
         } else {
-            alert("Pokémon not found!");
+            toast.error
+                ('Pokemon não encontrado!', {
+                    position: 'bottom-right',
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
         }
     };
+
 
 
     return (
