@@ -97,7 +97,7 @@ const PokemonPage: React.FC = () => {
                                             : stat?.stat?.name.includes("special-defense")
                                                 ? stat?.stat?.name.replace("special-defense", "Sp.Def")
                                                 : stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}:</h3>
-                                        <div className={`rounded w-[100%] relative`}>
+                                        <div className={`rounded w-[75%] relative`}>
                                             <div className={`${getStatLabel(stat.stat.name)} rounded w-[100%] h-[100%] absolute opacity-50 z-[-1]`}></div>
                                             <p className={`${getStatLabel(stat.stat.name)} rounded text-carmine text-center font-bold`} style={{ width: calculatePercentage(stat.base_stat) }}>{stat.base_stat}</p>
                                         </div>
