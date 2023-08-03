@@ -12,7 +12,7 @@ export const PokemonList: React.FC<PokemonListProps> = ({ pokemon }) => {
                 href={`/pokemon/${encodeURIComponent(pokemon.name)}`
                 }
             >
-                <p className='text-center text-lg font-bold text-white'>Numero: {pokemon.id}</p>
+                <p className='text-center text-sm font-light text-white'>Pokedex Nº: {pokemon.id}</p>
                 <img className='w-[150px]' src={pokemon.sprites.front_default} alt={pokemon.name} />
                 <p className='text-center text-lg font-bold text-white'>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</p>
                 <div className='flex gap-1'>

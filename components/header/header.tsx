@@ -48,7 +48,7 @@ export const Header = () => {
 
 
     return (
-        <header className="p-5 flex justify-between items-center border-b-2 border-carmine bg-slate-950 max-sm:flex-col max-sm:gap-4">
+        <header className="p-5 flex justify-between items-center border-b-2 border-carmine bg-slate-950 max-sm:flex-col max-sm:gap-4 w-[100%]">
             <Link href={"/"} className="flex items-center gap-5">
                 <Image src={logo} className="w-[30px]" alt="PokeProject Logo" />
                 <h1>PokeProject</h1>

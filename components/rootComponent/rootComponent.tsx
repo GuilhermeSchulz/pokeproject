@@ -14,8 +14,8 @@ export default function RootComponent({
             <Provider store={store}>
                 <Header />
                 {children}
+                <ToastContainer />
             </Provider>
-            <ToastContainer />
         </>
 
     )

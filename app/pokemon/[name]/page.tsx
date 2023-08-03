@@ -73,7 +73,7 @@ const PokemonPage: React.FC = () => {
                 <div className='w-[100%] h-[100%] flex items-center gap-5 p-5 justify-between max-sm:flex-col max-sm:overflow-auto max-sm:h-[85%]'>
 
                     <div className='w-[30%] bg-black drop-shadow-xl p-2 flex gap-5 rounded flex-col justify-center items-center h-[100%] max-sm:w-[100%] max-sm:h-[600px]'>
-                        <p className='text-center text-lg font-bold text-white'>Numero: {pokemon?.id}</p>
+                        <p className='text-center text-lg font-bold text-white'>Pokedex Nº: {pokemon?.id}</p>
                         <span className='p-2 bg-carmine rounded text-white w-[80px] text-center cursor-pointer' onClick={shinyToggle}>{shiny ? "Normal" : "Shiny"}</span>
                         <img className="w-[200px]" src={shiny ? pokemon?.sprites.front_shiny : pokemon?.sprites.front_default} alt={pokemon?.name} />
                         <h1 className='text-center text-lg font-bold text-white'>{fixName}</h1>

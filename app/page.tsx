@@ -28,7 +28,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="p-5 flex flex-col gap-2 justify-end">
+    <main className="p-5 flex flex-col gap-2 justify-end w-[100%]">
       <select className="p-2 bg-black text-white w-[200px]" onChange={(e) => {
         dispatch(setLoading(true));
         if (e.target.value === "0")
@@ -47,7 +47,7 @@ export default function Home() {
         <option value={8}>Geração 8</option>
         <option value={9}>Geração 9</option>
       </select>
-      <ul className="flex flex-wrap gap-8 justify-center max-sm:gap-2">
+      <ul className="flex flex-wrap gap-8 justify-center max-sm:gap-2 w-[100%]">
         {loading ? (
           Array.from({ length: 24 }).map((_, i) => (
             <Skeleton key={i} variant="rounded" width={200} height={250} />
