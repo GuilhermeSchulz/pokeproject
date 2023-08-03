@@ -1,6 +1,9 @@
 export interface Pokemon {
+    id: number;
     order: number;
     name: string;
+    height: number;
+    weight: number;
     sprites: {
         front_default: string;
         front_shiny: string;
@@ -23,8 +26,7 @@ export interface Pokemon {
     evolution_chain: {
         url: string;
     };
-    height: number;
-    weight: number;
+
     flavor_text_entries: [
         {
             flavor_text: string
